@@ -1,10 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import SpecificationCard from './components/SpecificationCard';
 
 function App() {
   return (
     <div className="App">
-      <h1>Привет бродягам</h1>
+      <Header/>
+      <div className="spec-card">
+      <SpecificationCard/>
+      <SpecificationCard/>
+      <SpecificationCard/>
+      </div>
     </div>
   );
 }
