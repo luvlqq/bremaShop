@@ -1,6 +1,8 @@
 import './App.css';
 import Header from './components/Header';
 import SpecificationCard from './components/SpecificationCard';
+import Sales from './components/Sale';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <SpecificationCard/>
       <SpecificationCard/>
       </div>
+      <Sales/>
+      <Footer/>
     </div>
   );
 }
