@@ -7,7 +7,7 @@
     font-weight: 400;
     font-size: 30px;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
     align-items: center;
 }
 .header__image{
@@ -16,7 +16,7 @@
 .header__image img{
     width: 100%;
     height: 420px;
-    opacity: 0.8;
+
 }
 .header__image button{
     position: absolute;
@@ -35,6 +35,8 @@
     cursor: pointer;
     justify-content: center;
     text-align: center;
+    opacity: 80%;
+    border-radius: 10px;
 }
 
 

@@ -4,6 +4,7 @@
 .container__sales{
     width: 1440px;
     position: relative;
+    overflow: hidden;
 }
 .container__sales img{
     width: 100%;
@@ -15,8 +16,19 @@
     text-transform: uppercase;
     font-weight: 400;
     position: absolute;
-    top: 50%;
-    left: 38%;
-    color: white;
+    top: 40%;
+    left: 99%;
+    color: rgb(0, 0, 0);
     letter-spacing: 10px;
+    animation: text 10s infinite linear;;
+    white-space: nowrap;
 }
+  @keyframes text {
+    0%{
+      transform: translate(0, 0);
+    }
+    
+    100%{
+      transform: translate(-260%, 0);
+    }
+  }
