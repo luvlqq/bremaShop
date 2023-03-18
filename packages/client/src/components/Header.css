@@ -9,6 +9,8 @@
     letter-spacing: 2px;
     margin-bottom: 7px;
     align-items: center;
+    background-color: black;
+    color: #dadada;
 }
 .header__image{
     position: relative;

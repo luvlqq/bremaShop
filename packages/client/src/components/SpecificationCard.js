@@ -1,11 +1,11 @@
 import "./SpecificationCard.css";
 
-const SpecificationCard=()=>{
+const SpecificationCard=(props)=>{
     return(
         <div className="specification__card">
             <div className="container">
-            <img src="/img/speccardmen1.jpg" alt="Women"></img>
-            <button>Men</button>
+            <img src={props.imgUrl} alt="Women"></img>
+            <button>{props.title}</button>
             </div>
         </div>
     )
