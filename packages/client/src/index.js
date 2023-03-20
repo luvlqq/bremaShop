@@ -7,7 +7,7 @@ import ProductCard from './product-card/ProductCard';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<ProductCard />);
+root.render(<App />);
 
 
 

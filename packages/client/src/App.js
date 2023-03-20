@@ -4,6 +4,7 @@ import SpecificationCard from './components/SpecificationCard';
 import Sales from './components/Sale';
 import Footer from './components/Footer';
 import Card from './components/Card';
+import Logo from './components/Logo';
 
 
 const  speccard=[
@@ -47,6 +48,7 @@ const cardsonsale=[
 function App() {
   return (
     <div className="App">
+      <Logo/>
       <Header/>
       <div className="spec-card">
       {speccard.map((obj)=>(
