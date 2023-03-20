@@ -1,9 +1,12 @@
 import "./ProductCard.css";
-import Header from "../components/Header";
+import AlsoLike from "../alsolike/AlsoLike";
+import Logo from "../components/Logo";
 import Footer from "../components/Footer";
 
 const ProductCard=(props)=>{
 return(
+    <div className="product_card_container">
+        <Logo/>
     <div className="product_card">
         <div className="product_card_content">
             <img src="/img/ziphoodie.jpg" alt="Photo will be soon..."></img>
@@ -23,6 +26,11 @@ return(
             </div>
         </div>
 
+    </div>
+    <AlsoLike/>
+    <div className="footer">
+    <Footer/>
+    </div>
     </div>
 );
 }
