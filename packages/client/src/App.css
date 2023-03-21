@@ -6,11 +6,21 @@
 .App {
   text-align: center;
   border-radius: 10px;
-  background-color: rgb(183, 183, 183);
+  background-color: rgb(214, 214, 214);
+  margin-top: 20px;
+  margin-bottom: 30px;
 
 }
 .spec-card{
   display: flex;
   justify-content: start;
 }
+.cards-on-sale{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
