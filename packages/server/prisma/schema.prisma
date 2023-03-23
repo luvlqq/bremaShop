@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               Int               @unique @default(autoincrement())
+  userName         String
+  userEmail        String
+  userHashPassword String
+  shopHistory      userShopHistory[]
+  Cart             Cart[]
+}
+
+model userShopHistory {
+  id          Int       @id @default(autoincrement())
+  user        User      @relation(fields: [userId], references: [id])
+  userId      Int
+  products    Product[]
+  purchasedAt DateTime  @default(now())
+}
+
+model Product {
+  productID       Int               @id @default(autoincrement())
+  productName     String
+  category        ProductCategory?  @relation(fields: [categoryID], references: [id])
+  categoryID      Int?
+  productPrice    Float
+  productDesc     String?
+  productReview   Review[]
+  productRating   Int
+  userShopHistory userShopHistory[]
+  Cart            Cart?             @relation(fields: [cartId], references: [id])
+  cartId          Int?
+  Moderator       Moderator?        @relation(fields: [moderatorId], references: [id])
+  moderatorId     Int?
+}
+
+model Review {
+  id              Int     @id @default(autoincrement())
+  reviewText      String
+  reviewRating    Int
+  rewiewProductID Int
+  product         Product @relation(fields: [rewiewProductID], references: [productID])
+}
+
+model ProductCategory {
+  id          Int        @id @default(autoincrement())
+  name        String
+  description String?
+  product     Product[]
+  Moderator   Moderator? @relation(fields: [moderatorId], references: [id])
+  moderatorId Int?
+}
+
+model Cart {
+  id               Int             @id @default(autoincrement())
+  user             User            @relation(fields: [userId], references: [id])
+  userId           Int
+  products         Product[]
+  createdAt        DateTime        @default(now())
+  deliveryMethod   DeliveryMethod? @relation(fields: [deliveryMethodId], references: [id])
+  deliveryAddress  String?
+  deliveryMethodId Int?
+}
+
+model DeliveryMethod {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  Cart        Cart[]
+}
+
+model Moderator {
+  id           Int               @id @default(autoincrement())
+  email        String            @unique
+  hashPassword String
+  products     Product[]
+  categories   ProductCategory[]
+  support      Support[]
+}
+
+model Support {
+  id          Int       @id @default(autoincrement())
+  issueType   String
+  description String?
+  moderator   Moderator @relation(fields: [moderatorId], references: [id])
+  moderatorId Int
+  createdAt   DateTime  @default(now())
+}
